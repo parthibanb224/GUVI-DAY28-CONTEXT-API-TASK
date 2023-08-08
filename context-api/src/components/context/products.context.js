@@ -10,7 +10,7 @@ export default function ProductContextProvider({children}){
     const [products,setProducts] = useState([]);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BASE_URL}${process.env.REACT_APP_MOCKS_PRODUCTS_PATH}`)
+        fetch("./mocks/products.json")
             .then(response => response.json())
             .then(result => {
                 if (result.products) {
